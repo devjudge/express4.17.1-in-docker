@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:12
+FROM mhart/alpine-node:10
 
 COPY public /tmp/public/
 COPY app.js /tmp/
