@@ -1,9 +1,11 @@
 FROM mhart/alpine-node:10
 
 # Pre Build Commands
-RUN wget https://codejudge-starter-repo-artifacts.s3.ap-south-1.amazonaws.com/backend-project/node/express/pre-build.sh
-RUN chmod 775 ./pre-build.sh
-RUN sh pre-build.sh
+RUN wget https://codejudge-starter-repo-artifacts.s3.ap-south-1.amazonaws.com/backend-project/node/express/pre-build-v2-alpine.sh
+RUN chmod 775 ./pre-build-v2-alpine.sh
+RUN sh pre-build-v2-alpine.sh
+
+ENV MONGOMS_SYSTEM_BINARY=/usr/bin/mongod
 
 COPY . /tmp/
 WORKDIR /tmp/
